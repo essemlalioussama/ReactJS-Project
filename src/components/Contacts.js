@@ -29,20 +29,28 @@ export default class Contacts extends Component {
         };
     };
 
+    deletecontact = (id) => {
+        const newcontacts = this.state.contacts.filter((contact) => contact.id !== id);
+        this.setState({
+            contacts: newcontacts
+        });
+    }
+
     render() {
         const { contacts } = this.state;
         return (
-            < div >
+            <React.Fragment>
                 {
                     contacts.map(contact =>
                         <Contact
                             key={contact.id}
                             contact={contact}
+                            deletecontact={this.deletecontact.bind(this, contact.id)}
                         />
                     )
                 }
 
-            </div >
+            </React.Fragment>
         )
     }
 }
