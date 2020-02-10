@@ -3,14 +3,6 @@ import Contact from './Contact'
 import { Consumer } from '../context';
 
 export default class Contacts extends Component {
-
-    deletecontact = (id) => {
-        const newcontacts = this.state.contacts.filter((contact) => contact.id !== id);
-        this.setState({
-            contacts: newcontacts
-        });
-    }
-
     render() {
         return (
             <Consumer>
@@ -24,7 +16,6 @@ export default class Contacts extends Component {
                                         <Contact
                                             key={contact.id}
                                             contact={contact}
-                                            deletecontact={this.deletecontact.bind(this, contact.id)}
                                         />
                                     )
                                 }
