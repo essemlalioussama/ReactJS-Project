@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Consumer } from '../../context'
 import uuid from 'uuid'
+import TextInput from '../layout/textInput'
 
 
 class Addcontact extends Component {
@@ -38,21 +39,12 @@ class Addcontact extends Component {
                                 <div className="card-header">Add Contact</div>
                                 <div className="card-body">
                                     <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                                        <div className="form-group">
-                                            <label htmlFor="name">name : </label>
-                                            <input type="text" name="name" className="form-control form-control-lg" value={name}
-                                                onChange={this.onchange} />
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="email">email : </label>
-                                            <input type="email" name="email" className="form-control form-control-lg" value={email}
-                                                onChange={this.onchange} />
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="phone">phone : </label>
-                                            <input type="text" name="phone" className="form-control form-control-lg" value={phone}
-                                                onChange={this.onchange} />
-                                        </div>
+                                        <TextInput name={"name"} placeholder={"Entrer name..."} value={name} onchange={this.onchange} label="Name" />
+
+                                        <TextInput name={"email"} placeholder={"Entrer email..."} value={email} onchange={this.onchange} label="Email" />
+
+                                        <TextInput name={"phone"} placeholder={"Entrer phone..."} value={phone} onchange={this.onchange} label="Phone" />
+
                                         <input type="submit" value="Ajouter" className="btn btn-block bg-light" />
                                     </form>
                                 </div>
