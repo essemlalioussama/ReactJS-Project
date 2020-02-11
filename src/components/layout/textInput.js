@@ -7,7 +7,7 @@ const TextInput = ({ name, label, type, placeholder, value, onchange }) => {
         <div className="form-group">
             <label htmlFor={name}>{label} : </label>
             <input type={type} name={name} className="form-control form-control-lg" value={value}
-                onChange={onchange} placeholder={placeholder} />
+                onChange={onchange} placeholder={placeholder} required />
         </div>
     )
 }

@@ -11,6 +11,7 @@ export default class Contacts extends Component {
                         const { contacts } = value;
                         return (
                             <React.Fragment>
+                                <h1 className="display-4 font-weight-bold mb-3 text-danger">Contact List</h1>
                                 {
                                     contacts.map(contact =>
                                         <Contact
